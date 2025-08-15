@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Aakib - Full Stack Java Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        .typing-animation {
+            border-right: 2px solid #667eea;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #667eea; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-800">MA</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center text-white px-4">
+            <div class="mb-8">
+                <div class="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg overflow-hidden">
+                    <img src="images\gooey.ai - nfor software developer add conding in background hacker style real face n.png" alt="Profile" class="w-full h-full object-cover object-[center_10%]">
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Mohammad Aakib</h1>
+            <div class="text-xl md:text-2xl mb-8 h-8">
+                <span id="typing-text" class="typing-animation">Full Stack Java Developer</span>
+            </div>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Passionate about creating robust, scalable applications with modern Java technologies and frameworks
+            </p>
+            <div class="space-x-4">
+                <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-block">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Box -->
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-0 h-80 w-full overflow-hidden shadow-lg flex items-center justify-center">
+                        <img src="images/IMG_0788.jpg" alt="Profile" class="w-full h-full object-cover object-[center_35%]">
+                    </div>
+                </div>
+                <!-- Content Box -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Experienced Full Stack Developer</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With over 2 years of experience in Java development, I specialize in building enterprise-level applications 
+                        using Spring Boot, microservices architecture, and modern frontend frameworks. I'm passionate about 
+                        clean code, best practices, and delivering high-quality solutions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>2+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>35+ Projects Completed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Enterprise Solutions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Agile Methodology</span>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1TfzU-DSaahl6HGEmfhedsztmC34ErvZS/view?usp=drive_link" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Technical Skills</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Backend Skills -->
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover fade-in">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-server text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Backend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Java</span>
+                                <span class="text-sm text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Spring Boot</span>
+                                <span class="text-sm text-gray-500">70%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-green-600 h-2 rounded-full" style="width: 0%" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Microservices</span>
+                                <span class="text-sm text-gray-500">75%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-purple-600 h-2 rounded-full" style="width: 0%" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">REST API</span>
+                                <span class="text-sm text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-yellow-600 h-2 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Skills -->
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover fade-in">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-laptop-code text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Frontend Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">HTML</span>
+                                <span class="text-sm text-gray-500">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">CSS</span>
+                                <span class="text-sm text-gray-500">82%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-red-600 h-2 rounded-full" style="width: 0%" data-width="82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">JavaScript</span>
+                                <span class="text-sm text-gray-500">30%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-yellow-500 h-2 rounded-full" style="width: 0%" data-width="30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover fade-in">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-database text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Database</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">MySQL</span>
+                                <span class="text-sm text-gray-500">92%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-indigo-600 h-2 rounded-full" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">H2 Database</span>
+                                <span class="text-sm text-gray-500">40%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-400 h-2 rounded-full" style="width: 0%" data-width="40%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">MongoDB</span>
+                                <span class="text-sm text-gray-500">45%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-orange-500 h-2 rounded-full" style="width: 0%" data-width="45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover fade-in">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-tools text-4xl text-gray-800 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Git & GitHub</span>
+                                <span class="text-sm text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-gray-800 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">IntelliJ IDEA</span>
+                                <span class="text-sm text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-purple-400 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Eclipse</span>
+                                <span class="text-sm text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-400 h-2 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">VS Code</span>
+                                <span class="text-sm text-gray-500">75%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 h-2 rounded-full" style="width: 0%" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium">Postman</span>
+                                <span class="text-sm text-gray-500">80%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-orange-400 h-2 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: IPL Management System Application -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center">
+                        <i class="fas fa-trophy text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">IPL Management System Application</h3>
+                        <p class="text-gray-600 mb-4">
+                            A complete IPL (Indian Premier League) management web application built using Java, Spring Boot, Thymeleaf, REST API, and MySQL. Features include player registration, team management, match scheduling, admin dashboard, and secure authentication. APIs are tested using Postman.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Java</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Spring Boot</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Thymeleaf</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">REST API</span>
+                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">Postman</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Aakhibkhan/ipl-management-system" target="_blank" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors text-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="https://github.com/Aakhibkhan/ipl-management-system" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors text-center">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Spring Boot Product Management Application -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="bg-gradient-to-br from-green-500 to-teal-600 h-48 flex items-center justify-center">
+                        <i class="fas fa-box-open text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Spring Boot Product Management Application</h3>
+                        <p class="text-gray-600 mb-4">
+                            Product management system developed with Java, Spring Boot, Thymeleaf, REST API, and MySQL. Allows users to add, update, delete, and view products. Implements REST APIs for CRUD operations and uses Postman for API testing. Clean UI and secure authentication included.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Java</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Spring Boot</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Thymeleaf</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">REST API</span>
+                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">Postman</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Aakhibkhan/SpringBootProductManagementApp" target="_blank" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors text-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="https://github.com/Aakhibkhan/SpringBootProductManagementApp" target="_blank" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors text-center">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Banking Management System -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="bg-gradient-to-br from-gray-700 to-blue-900 h-48 flex items-center justify-center">
+                        <i class="fas fa-university text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Banking Management System</h3>
+                        <p class="text-gray-600 mb-4">
+                            A simple and secure banking management system built using Java, MySQL, and JDBC. Features include account creation, balance enquiry, deposit, withdrawal, and transaction history. Designed with a focus on core Java concepts and database connectivity.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Java</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MySQL</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">JDBC</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/Aakhibkhan/BankingManagementSystem.git" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors text-center">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="https://github.com/Aakhibkhan/BankingManagementSystem.git" class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors text-center">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study & Language Section -->
+    <section id="study" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Education & Certifications</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div class="bg-blue-50 rounded-lg p-8 shadow-lg fade-in flex flex-col items-center">
+                    <i class="fas fa-graduation-cap text-4xl text-blue-700 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2 text-blue-800">BCA <span class="text-base font-normal text-gray-600">(Bachelor of Computer Applications)</span></h3>
+                    <p class="text-gray-700 mb-2">Shri Venkateshwara University, Gajraula, India</p>
+                    <p class="text-gray-600 mb-2">2021 - 2024</p>
+                </div>
+                <!-- Certification -->
+                <div class="bg-purple-50 rounded-lg p-8 shadow-lg fade-in flex flex-col items-center">
+                    <i class="fas fa-certificate text-4xl text-purple-700 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2 text-purple-800">DCAA</h3>
+                    <p class="text-gray-700 mb-2">MS Word, Excel, PowerPoint, Tally ERP 9 with GST</p>
+                    <p class="text-gray-600 mb-2">Diploma in Computer Application & Accounting</p>
+                </div>
+            </div>
+            <!-- Language Section -->
+            <div class="mt-12 text-center fade-in">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Languages</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="flex items-center bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold">
+                        <i class="fas fa-language text-blue-600 mr-2"></i>Hindi
+                    </span>
+                    <span class="flex items-center bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold">
+                        <i class="fas fa-language text-blue-600 mr-2"></i>English
+                    </span>
+                    <span class="flex items-center bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold">
+                        <i class="fas fa-language text-blue-600 mr-2"></i>Urdu
+                    </span>
+                    <span class="flex items-center bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-semibold">
+                        <i class="fas fa-language text-blue-600 mr-2"></i>Arabic
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">aakhibkhan8@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+971 52 609 9276</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Location</h4>
+                                <p class="text-gray-600">112 Street 29 c - Al Rashidiya - Dubai</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/mohammad-aakib-9555a8321" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Aakhibkhan" class="bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-900 transition-colors" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/AakhibKhan1" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/aakhib_khan_09?igsh=d3lqNHNwdHI0OWdi" class="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-colors" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/16bCS5R41o/" class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/917060399416" class="bg-green-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <form id="contactForm" method="POST" class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                                Name
+                            </label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="name" name="name" type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                Email
+                            </label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="email" name="email" type="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">
+                                Subject
+                            </label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" id="subject" name="subject" type="text" placeholder="Project Discussion">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                                Message
+                            </label>
+                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 h-32" id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <div id="form-message" class="text-green-600 font-semibold mt-4 hidden"></div>
+                        <button class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold" type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 Mohammad Aakib. All rights reserved.</p>
+                <p class="text-gray-400 mt-2">Built with passion and modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const texts = ['Full Stack Java Developer', 'Spring Boot Expert', 'Microservices Architect', 'Problem Solver'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            setTimeout(typeWriter, isDeleting ? 50 : 100);
+        }
+
+        typeWriter();
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Skill bar animation
+        const skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 500);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            if (el.querySelector('.skill-bar')) {
+                skillObserver.observe(el);
+            }
+        });
+
+
+        // Project buttons functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Live Demo')) {
+                button.addEventListener('click', function() {
+                    alert('Demo would open in a new window. This is a portfolio demonstration.');
+                });
+            } else if (button.textContent.includes('Code')) {
+                button.addEventListener('click', function() {
+                    alert('GitHub repository would open in a new window. This is a portfolio demonstration.');
+                });
+            }
+        });
+
+        // Contact Form AJAX Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch('https://formsubmit.co/ajax/aakhibkhan8@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Form submit successfully. I'll contact you soon.");
+                    form.reset();
+                } else {
+                    alert("There was an error. Please try again!");
+                }
+            })
+            .catch(() => {
+                alert("There was an error. Please try again!");
+            });
+        });
+
+        // Hide form-message on input
+        document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(el => {
+            el.addEventListener('input', function() {
+                document.getElementById('form-message').classList.add('hidden');
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96eaab9eb1b39955',t:'MTc1NTExMzg4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
